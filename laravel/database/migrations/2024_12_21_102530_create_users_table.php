@@ -17,8 +17,7 @@ return new class extends Migration
             $table->string('email',100);
             $table->string('sifre',100);
             $table->string('telefon',11);
-            $table->string('profilresmi')->nullable();
-            $table->foreignId('rol_id')->constrained('roles');
+            $table->enum('role',['admin','user','visitor'])->default('visitor');
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('kategori_id')->constrained('categories');
             $table->foreignId('eser_gorseli_id')->constrained('work_images');
             $table->foreignId('sergilendigi_yer_id')->constrained('cities');
+            $table->foreignId('yapan_id')->constrained('artists');
             $table->timestamps();
         });
     }

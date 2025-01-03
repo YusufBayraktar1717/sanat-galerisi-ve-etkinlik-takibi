@@ -17,11 +17,10 @@ return new class extends Migration
 
                 $table->string('ad'); //
                 $table->text('aciklama')->nullable();
-                $table->date('baslangic_tarihi');
-                $table->date('bitis_tarihi');
-                $table->time('baslangic_saati');
-                $table->time('bitis_saati') ;
+                $table->datetime('baslangic_tarihi');
+                $table->datetime('bitis_tarihi');
                 $table->foreignId('konum_id')->constrained('cities');
+                $table->foreignId('kategori_id')->constrained('event_categories');
                 $table->enum('durum', ['planlanıyor', 'aktif', 'tamamlandı', 'iptal'])->default('planlanıyor');
                 $table->timestamps();
         });

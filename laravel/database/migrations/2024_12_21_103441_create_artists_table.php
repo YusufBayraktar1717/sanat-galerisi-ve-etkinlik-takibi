@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('artists', function (Blueprint $table) {
             $table->id();
             $table->string('name',50);
-            $table->text('biyografi');
+            $table->longText('biyografi');
             $table->datetime('dogum_tarihi');
-            $table->datetime('olum_tarihi');
-            $table->string('Milliyet',50);
-            $table->datetime('kayıt/guncelleme_tarihi');
+            $table->datetime('olum_tarihi')->nullable();
+            $table->string('milliyet',50);
+            $table->datetime('kayit_guncelleme_tarihi');
+            $table->string('foto_url')->nullable();
             $table->timestamps();
         });
     }

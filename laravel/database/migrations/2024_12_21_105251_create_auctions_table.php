@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('auctions', function (Blueprint $table) {
             $table->id();
             $table->string('ad');
-            $table->text('açıklama')->nullable();
+            $table->text('aciklama')->nullable();
             $table->foreignId('eser_id')->constrained('works');
             $table->decimal('başlangıç_fiyatı', 10, 2);
             $table->decimal('anlık_fiyat', 10, 2)->nullable();
